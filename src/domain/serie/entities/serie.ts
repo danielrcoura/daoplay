@@ -1,3 +1,5 @@
+import Season from './season';
+
 export default class Serie {
     private _name: string;
     private _seasons: Season[];
@@ -31,6 +33,17 @@ export default class Serie {
 
     public get currentSeason() {
         return this._currentSeason;
+    }
+
+    public set currentEpisode(newValue: number) {
+        if (newValue < 1) throw Error('The currentEpisode must be a positive number');
+        this._currentEpisode = newValue;
+        
+    }
+
+    public set currentSeason(newValue: number) {
+        if (newValue < 1) throw Error('The currentSeason must be a positive number');
+        this._currentSeason = newValue;
     }
 
     public addTag(tag: string) {

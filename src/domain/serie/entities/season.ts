@@ -1,4 +1,5 @@
-class Season {
+import Episode from './episode';
+export default class Season {
     private _episodes: Episode[];
 
     constructor(episodes: Episode[]) {
